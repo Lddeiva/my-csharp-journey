@@ -12,7 +12,7 @@ class HelloWorld
 {
     static void Main()
     {
-        Console.WriteLine("Hello, World");
+        Console.WriteLine("Hello, World"); // prints Hello, World
     }
 }
 
@@ -29,7 +29,7 @@ class Numbers
     static void Main()
     {
         int number1;
-        Console.WriteLine(number1);
+        Console.WriteLine(number1); // throws error CS0165
     }
 }
 
@@ -46,7 +46,7 @@ class Numbers
     static void Main()
     {
         int number1 = default(int);
-        Console.WriteLine(number1);
+        Console.WriteLine(number1); // prints 0 with warning CS0168
     }
 }
 
@@ -64,10 +64,31 @@ class Numbers
     static void Main()
     {
         int number1 = 7;
-        Console.WriteLine(number1);
+        Console.WriteLine(number1); // prints 7
     }
 }
 
 //Output
 7
+```
+
+#### 05 - Print the sum of two integers
+```C#
+//Program.cs
+using System;
+class Numbers
+{
+    static void Main()
+    {
+        int number1 = 7, number2 = 8, result;
+        Console.WriteLine(number1 + number2); // prints 15
+        
+        result = number1 + number2;
+        Console.WriteLine(result); // prints 15
+    }
+}
+
+//Output
+15
+15
 ```
