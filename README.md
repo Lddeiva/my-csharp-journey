@@ -29,7 +29,7 @@ class Numbers
     static void Main()
     {
         int number1;
-        Console.WriteLine(number1); // throws error CS0165
+        Console.WriteLine(number1); // throws error CS0165: Use of unassigned local variable 'number1'
     }
 }
 
@@ -46,12 +46,11 @@ class Numbers
     static void Main()
     {
         int number1 = default(int);
-        Console.WriteLine(number1); // prints 0 with warning CS0168
+        Console.WriteLine(number1); // prints 0
     }
 }
 
 //Output
-warning CS0168: The variable 'number1' is declared but never used
 0
 ```
 
@@ -124,13 +123,13 @@ class Numbers
     static void Main()
     {
         sbyte number1 = 122;
-        Console.WriteLine(number1);
-        Console.WriteLine(number1.GetType());
-        Console.WriteLine("\n");
+        Console.WriteLine(number1); // prints 122
+        Console.WriteLine(number1.GetType()); // prints System.SByte
+        Console.WriteLine("\n"); // prints a new line
         
         byte number2 = 200;
-        Console.WriteLine(number2);
-        Console.WriteLine(number2.GetType());
+        Console.WriteLine(number2); // prints 200
+        Console.WriteLine(number2.GetType()); // prints System.Byte
     }
 }
 
@@ -157,12 +156,12 @@ class Numbers
 {
     static void Main()
     {
-        sbyte number1 = 128;
+        sbyte number1 = 128; // throws error CS0031: Constant value '128' cannot be converted to a 'sbyte'
         Console.WriteLine(number1);
         Console.WriteLine(number1.GetType());
         Console.WriteLine("\n");
         
-        byte number2 = 256;
+        byte number2 = 256; //throws error CS0031: Constant value '256' cannot be converted to a 'byte'
         Console.WriteLine(number2);
         Console.WriteLine(number2.GetType());
     }
@@ -173,3 +172,69 @@ error CS0031: Constant value '128' cannot be converted to a 'sbyte'
 error CS0031: Constant value '256' cannot be converted to a 'byte'
 ```
 
+#### 09 - `short` and `ushort` integral types
+```C#
+//Program.cs
+using System;
+class Numbers
+{
+    static void Main()
+    {
+        short number1 = -736;
+        Console.WriteLine(number1); // prints -736
+        Console.WriteLine(number1.GetType()); // prints System.Int16
+        Console.WriteLine("\n"); // prints a new line
+        
+        ushort number2 = 8544;
+        Console.WriteLine(number2); // prints 8544
+        Console.WriteLine(number2.GetType()); // prints System.UInt16
+    }
+}
+
+//Output
+-736
+System.Int16
+
+
+8544
+System.UInt16
+```
+##### Characteristics of the `short` and `ushort` integral types
+|C# type/keyword|Range|Size|.NET type|
+|----------|-----------|----------|-------------|
+|`short`|-32,768 to 32,767|Signed 16-bit integer|[System.Int16](https://docs.microsoft.com/en-us/dotnet/api/system.int16)|
+|`ushort`|0 to 65,535|Unsigned 16-bit integer|[System.UInt16](https://docs.microsoft.com/en-us/dotnet/api/system.uint16)|
+
+#### 10 - `long` and `ulong` integral types
+```C#
+//Program.cs
+using System;
+class Numbers
+{
+    static void Main()
+    {
+        long number1 = -2147483649;
+        Console.WriteLine(number1); // prints -2147483649
+        Console.WriteLine(number1.GetType()); // prints System.Int64
+        Console.WriteLine("\n"); // prints a new line
+        
+        ulong number2 = 2147483648;
+        Console.WriteLine(number2); // prints 2147483648
+        Console.WriteLine(number2.GetType()); // prints System.UInt64
+    }
+}
+
+//Output
+-2147483649
+System.Int64
+
+
+2147483648
+System.UInt64
+```
+
+##### Characteristics of the `long` and `ulong` integral types
+|C# type/keyword|Range|Size|.NET type|
+|----------|-----------|----------|-------------|
+|`long`|-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|Signed 64-bit integer|[System.Int64](https://docs.microsoft.com/en-us/dotnet/api/system.int64)|
+|`ulong`|0 to 18,446,744,073,709,551,615|Unsigned 64-bit integer|[System.UInt64](https://docs.microsoft.com/en-us/dotnet/api/system.uint64)|
