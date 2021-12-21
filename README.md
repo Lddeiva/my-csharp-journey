@@ -201,5 +201,6 @@ System.UInt16
 ```
 ##### Characteristics of the `short` and `ushort` integral types
 |C# type/keyword|Range|Size|.NET type|
+|----------|-----------|----------|-------------|
 |`short`|-32,768 to 32,767|Signed 16-bit integer|[System.Int16](https://docs.microsoft.com/en-us/dotnet/api/system.int16)|
 |`ushort`|0 to 65,535|Unsigned 16-bit integer|[System.UInt16](https://docs.microsoft.com/en-us/dotnet/api/system.uint16)|
