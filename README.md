@@ -204,3 +204,37 @@ System.UInt16
 |----------|-----------|----------|-------------|
 |`short`|-32,768 to 32,767|Signed 16-bit integer|[System.Int16](https://docs.microsoft.com/en-us/dotnet/api/system.int16)|
 |`ushort`|0 to 65,535|Unsigned 16-bit integer|[System.UInt16](https://docs.microsoft.com/en-us/dotnet/api/system.uint16)|
+
+#### 10 - `long` and `ulong` integral types
+```C#
+//Program.cs
+using System;
+class Numbers
+{
+    static void Main()
+    {
+        long number1 = -2147483649;
+        Console.WriteLine(number1); // prints -2147483649
+        Console.WriteLine(number1.GetType()); // prints System.Int64
+        Console.WriteLine("\n"); // prints a new line
+        
+        ulong number2 = 2147483648;
+        Console.WriteLine(number2); // prints 2147483648
+        Console.WriteLine(number2.GetType()); // prints System.UInt64
+    }
+}
+
+//Output
+-2147483649
+System.Int64
+
+
+2147483648
+System.UInt64
+```
+
+##### Characteristics of the `long` and `ulong` integral types
+|C# type/keyword|Range|Size|.NET type|
+|----------|-----------|----------|-------------|
+|`long`|-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|Signed 64-bit integer|[System.Int64](https://docs.microsoft.com/en-us/dotnet/api/system.int64)|
+|`ulong`|0 to 18,446,744,073,709,551,615|Unsigned 64-bit integer|[System.UInt64](https://docs.microsoft.com/en-us/dotnet/api/system.uint64)|
