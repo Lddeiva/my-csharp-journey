@@ -326,3 +326,40 @@ System.Int32 42
 System.Int32 42
 
 ```
+
+#### 14 - Behavior of literals and overflow testing
+```C#
+//Program.cs
+using System;
+class Numbers
+{
+    static void Main()
+    {
+        var hex_Literal = 0xFF_FF_FF_FF;
+        Console.WriteLine($"{hex_Literal.GetType()} {hex_Literal}"); // prints System.UInt32 4294967295
+        Console.WriteLine(unchecked((int)hex_Literal)); // prints -1 as 4294967295 cannot be represented using int type
+    }
+}
+
+//Output
+System.UInt32 4294967295
+-1
+```
+
+> Literals are interpreted as positive values. For example, the literal `0xFF_FF_FF_FF` represents the number `4294967295` of the `uint` type, though it has the same bit representation as the number `-1` of the `int` type. If you need a value of a certain type, cast a literal to that type. Use the `unchecked` operator, if a literal value cannot be represented in the target type. For example, `unchecked((int)0xFF_FF_FF_FF)` produces `-1`.
+
+
+##### Integer literals prefixes
+| Literal | Prefix | Notes | Types |
+|----------|-----------|-----------|-----------|
+| _decimal_ | without any prefix | | `int`, `uint`, `long`, `ulong` |
+| _hexadecimal_ | `0x` or `0X` | | |
+| _binary_ | `0b` or `0B` | available in C# 7.0 and later | |
+
+##### Integer literals suffixes
+| Literal | Suffix | Notes | Types |
+|----------|-----------|-----------|-----------|
+| _decimal_ | without any suffix | | `int`, `uint`, `long`, `ulong` |
+| _decimal_ | `U` or `u` | | `uint`, `ulong` |
+| _decimal_ | `L` or `l` | `warning CS0078: The 'l' suffix is easily confused with the digit '1' -- use 'L' for clarity ` | `long`, `ulong` |
+| _decimal_ | `UL`, `Ul`, `uL`, `ul`, `LU`, `Lu`, `lU`, or `lu` | | `ulong` |
