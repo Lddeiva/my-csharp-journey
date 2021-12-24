@@ -137,7 +137,6 @@ class Numbers
 122
 System.SByte
 
-
 200
 System.Byte
 ```
@@ -195,7 +194,6 @@ class Numbers
 -736
 System.Int16
 
-
 8544
 System.UInt16
 ```
@@ -227,7 +225,6 @@ class Numbers
 //Output
 -2147483649
 System.Int64
-
 
 2147483648
 System.UInt64
@@ -263,7 +260,6 @@ class Numbers
 -24548
 System.IntPtr
 
-
 75842584
 System.UIntPtr
 ```
@@ -295,7 +291,6 @@ class Numbers
 //Output
 -128
 127
-
 
 0
 18446744073709551615
