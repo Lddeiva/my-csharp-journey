@@ -273,3 +273,30 @@ System.UIntPtr
 |----------|-----------|----------|-------------|
 |`nint`|Depends on platform|Signed 32-bit or 64-bit integer|[System.IntPtr](https://docs.microsoft.com/en-us/dotnet/api/system.intptr)|
 |`nuint`|Depends on platform|Unsigned 32-bit or 64-bit integer|[System.UIntPtr](https://docs.microsoft.com/en-us/dotnet/api/system.uintptr)|
+
+#### 12 - Min and Max values of `sbyte` and `nunit` integral types
+```C#
+//Program.cs
+using System;
+class Numbers
+{
+    static void Main()
+    {
+
+        Console.WriteLine(sbyte.MinValue); // prints -128
+        Console.WriteLine(sbyte.MaxValue); // prints 127
+        Console.WriteLine("\n"); // prints a new line
+
+        Console.WriteLine(UIntPtr.MinValue); // prints 0
+        Console.WriteLine(UIntPtr.MaxValue); // prints 18446744073709551615
+    }
+}
+
+//Output
+-128
+127
+
+
+0
+18446744073709551615
+```
