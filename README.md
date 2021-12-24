@@ -238,3 +238,38 @@ System.UInt64
 |----------|-----------|----------|-------------|
 |`long`|-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807|Signed 64-bit integer|[System.Int64](https://docs.microsoft.com/en-us/dotnet/api/system.int64)|
 |`ulong`|0 to 18,446,744,073,709,551,615|Unsigned 64-bit integer|[System.UInt64](https://docs.microsoft.com/en-us/dotnet/api/system.uint64)|
+
+
+#### 11 - `nint` and `nunit` integral types
+```C#
+//Program.cs
+using System;
+class Numbers
+{
+    static void Main()
+    {
+        nint number1 = -24548;
+        Console.WriteLine(number1); // prints -24548
+        Console.WriteLine(number1.GetType()); // prints System.IntPtr
+        Console.WriteLine("\n"); // prints a new line
+        
+        nuint number2 = 75842584;
+        Console.WriteLine(number2); // prints 75842584
+        Console.WriteLine(number2.GetType()); // prints System.UIntPtr
+    }
+}
+
+//Output
+-24548
+System.IntPtr
+
+
+75842584
+System.UIntPtr
+```
+
+##### Characteristics of the `nint` and `nunit` integral types
+|C# type/keyword|Range|Size|.NET type|
+|----------|-----------|----------|-------------|
+|`nint`|Depends on platform|Signed 32-bit or 64-bit integer|[System.IntPtr](https://docs.microsoft.com/en-us/dotnet/api/system.intptr)|
+|`nuint`|Depends on platform|Unsigned 32-bit or 64-bit integer|[System.UIntPtr](https://docs.microsoft.com/en-us/dotnet/api/system.uintptr)|
