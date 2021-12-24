@@ -295,3 +295,34 @@ class Numbers
 0
 18446744073709551615
 ```
+
+#### 13 - Using  prefix and digit separator with integral types
+```C#
+//Program.cs
+using System;
+class Numbers
+{
+    static void Main()
+    {
+        // decimal - without any prefix
+        // hexadecimal - with the 0x or 0X prefix
+        // binary: with the 0b or 0B prefix (available in C# 7.0 and later)
+        
+        var decimal_Literal = 0_4_2; // decimal. Uses '_' as a digit separator.
+        var hex_Literal = 0x2_A; // hexadecimal. Uses '_' as a digit separator.
+        var binary_Literal = 0b_0010_1010; // binary. Uses '_' as a digit separator.
+        
+        // Digit separator '_' can be used with all kinds of numeric literals starting with C# 7.0.
+
+        Console.WriteLine($"{decimal_Literal.GetType()} {decimal_Literal}");  // uses string interpolation & prints System.Int32 42
+        Console.WriteLine($"{hex_Literal.GetType()} {hex_Literal}");         // uses string interpolation & prints System.Int32 42
+        Console.WriteLine(binary_Literal.GetType() + " " + binary_Literal); // prints System.Int32 42
+    }
+}
+
+//Output
+System.Int32 42
+System.Int32 42
+System.Int32 42
+
+```
