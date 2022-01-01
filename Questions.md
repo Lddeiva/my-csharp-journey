@@ -1,0 +1,18 @@
+- File operations
+  - Read
+    - From the beginning
+    - From the end
+    - A specific line
+    - Find specific string
+    - Find the number of total characters and file length
+    - Find the file size and its properties
+  - Write
+    - Append
+    - Overwrite
+    - Understand locking mechanisms
+  - Create
+    - New file
+    - New file with name of an existing file
+  - Delete
+    - Existing file
+    - non-existing file
